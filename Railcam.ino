@@ -8,9 +8,11 @@ int counter = 0;
 int Home = 0; // für die variable noch serielle verbindung schreiben ausm frontend
 int fahrerlaubnis = 1; // für faherlaubnis go command ausm fronend
 int positionP = 5;
+
 //int eingabeSerial = 0;
 //int eingabeKorrigiert = 0;
 //int setMotor(int wert);
+
 void setup() {
   Serial.begin(9600);
   pinMode(ir_pin, INPUT);
@@ -47,7 +49,6 @@ void loop() {
     }
     }
 
-
     // counterschleife
     int irState = digitalRead(ir_pin);
     if ( (irState == 1) && (hitObject == false) ) {
@@ -70,9 +71,6 @@ void loop() {
     else if ( (State == 0) && (hitReed == true) ) {
       hitReed = false;
     }
-
-
-    
 
     // homingfunktion
     if ( (Home == 1) && (hitReed == false)) {
